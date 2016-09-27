@@ -52,6 +52,7 @@ UserFlag Flag;
 uint16_t delayTormozRunRight = 2000;
 uint16_t delayTormozRunLeft = 2000;
 uint16_t delayTormogenie = 2000;
+uint16_t delayKachanie = 500;
 /* USER CODE END Variables */
 
 /* Function prototypes -------------------------------------------------------*/
@@ -225,11 +226,11 @@ void MainThred(void const * argument)
 			while(Flag.kachanie == GPIO_PIN_SET)
 			{
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
-				osDelay(500);
+				osDelay(delayKachanie);
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);
 				osDelay(200);
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, GPIO_PIN_SET);
-				osDelay(500);
+				osDelay(delayKachanie);
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, GPIO_PIN_RESET);
 				osDelay(200);
 
