@@ -36,3 +36,6 @@ controlblock v2.0\kompobmen.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal
 controlblock v2.0\kompobmen.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 controlblock v2.0\kompobmen.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 controlblock v2.0\kompobmen.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+controlblock v2.0\kompobmen.o: ../Inc/crc.h
+controlblock v2.0\kompobmen.o: ../Inc/usart.h
+controlblock v2.0\kompobmen.o: ../Inc/flash.h

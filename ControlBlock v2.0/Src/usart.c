@@ -48,7 +48,15 @@
 #include "gpio.h"
 
 /* USER CODE BEGIN 0 */
-
+void ChipSelectUsart1(GPIO_PinState newState)
+{
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, newState);
+}
+/*########################################*/
+void ChipSelectUsart2(GPIO_PinState newState)
+{
+    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_7, newState);
+}
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart1;

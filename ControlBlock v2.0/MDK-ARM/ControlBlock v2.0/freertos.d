@@ -53,3 +53,5 @@ controlblock v2.0\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_
 controlblock v2.0\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 controlblock v2.0\freertos.o: ../Inc/usart.h
 controlblock v2.0\freertos.o: ../Inc/workfunction.h
+controlblock v2.0\freertos.o: ../Inc/crc.h
+controlblock v2.0\freertos.o: ../Inc/kompobmen.h

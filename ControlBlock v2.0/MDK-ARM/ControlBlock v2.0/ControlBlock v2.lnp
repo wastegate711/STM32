@@ -13,6 +13,7 @@
 "controlblock v2.0\crc.o"
 "controlblock v2.0\freertos.o"
 "controlblock v2.0\kompobmen.o"
+"controlblock v2.0\flash.o"
 "controlblock v2.0\startup_stm32f407xx.o"
 "controlblock v2.0\stm32f4xx_hal_gpio.o"
 "controlblock v2.0\stm32f4xx_hal_tim_ex.o"

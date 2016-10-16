@@ -50,6 +50,8 @@
 #include "stm32f4xx_hal.h"
 #include "usart.h"
 #include "workfunction.h"
+#include "crc.h"
+#include "kompobmen.h"
 /* USER CODE END Includes */
 
 /* Variables -----------------------------------------------------------------*/
@@ -61,6 +63,8 @@ osThreadId myTask03Handle;
 extern uint8_t addrMaster;
 extern uint8_t addrSlave;
 
+volatile uint8_t rxDataCount1 = 0;
+volatile uint8_t rxDataCount2 = 0;
 uint8_t rxDataUsart2[255];
 uint8_t txDataUsart2[255];
 /* USER CODE END Variables */
@@ -73,14 +77,16 @@ void WorkFuncThred(void const * argument);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /* USER CODE BEGIN FunctionPrototypes */
-
+void ClearArray(UART_HandleTypeDef *huart, uint8_t *data, uint8_t len);
+uint8_t CompareDate(uint8_t *Buf);//функция сравнения CRC
 /* USER CODE END FunctionPrototypes */
 
 /* Hook prototypes */
 
 /* Init FreeRTOS */
 
-void MX_FREERTOS_Init(void) {
+void MX_FREERTOS_Init(void)
+{
   /* USER CODE BEGIN Init */
        
   /* USER CODE END Init */
@@ -136,13 +142,29 @@ void MainThred(void const * argument)
 void KompObmenThred(void const * argument)
 {
   /* USER CODE BEGIN KompObmenThred */
-    HAL_UART_Receive_IT(&huart2, rxDataUsart2, 255);
+    HAL_UART_Receive_IT(&huart2, rxDataUsart2, 100);
   /* Infinite loop */
   while(1)
   {
-      if((rxDataUsart2[1] != 0) && (rxDataUsart2[1] == addrSlave))
+      if((rxDataUsart2[1] != 0) && 
+      (rxDataUsart2[0] == addrSlave) && 
+      (rxDataCount2 == rxDataUsart2[3]))
       {
-          ValveAir(GPIO_PIN_SET);
+          if(CompareDate(rxDataUsart2) == 1)
+          {
+              switch(rxDataUsart2[2])
+              {
+                  case TEST:
+                        ValveAir(GPIO_PIN_SET);
+                        CmdTest();
+                        ValveAir(GPIO_PIN_RESET);
+                      break;
+                  case GET_ID_DEVICE:
+                        CmdGetUidDevice();
+                      break;
+              }
+              ClearArray(&huart2, rxDataUsart2, 10);
+          }
       }
     osDelay(1);
   }
@@ -162,7 +184,57 @@ void WorkFuncThred(void const * argument)
 }
 
 /* USER CODE BEGIN Application */
-     
+/*########################################*/
+/*########################################*/
+/*########################################*/
+/*########################################*/
+/*########################################*/
+/*########################################*/
+/*########################################*/
+void ClearArray(UART_HandleTypeDef *huart, uint8_t *data, uint8_t len)
+{
+    uint16_t i;
+    
+    for(i = 0;i < len;i++)
+    {
+        data[i] = 0x00;
+    }
+    
+    rxDataCount2 = 0;
+    huart->RxXferCount = 0xff;
+    huart->RxXferSize = 0xff;
+    huart->pRxBuffPtr = data;
+}
+/*########################################*/
+uint8_t CompareDate(uint8_t *Buf)//функция сравнения CRC
+{
+	uint32_t Compare7 = 0;
+	uint8_t i = 0;
+	uint8_t a[2];
+	uint8_t b[2];
+	uint8_t Dostup = 0;
+	if (Buf[3] > 4)
+	{
+		Compare7 = crc16(Buf, Buf[3] - 2);
+        //Compare7 = GetCRC16(rxDataUsart2, rxDataUsart2[3]);
+        //Compare7 = crc_16_rec(rxDataUsart2, rxDataUsart2[3]);
+
+		a[0] = Compare7 >> 8;
+		a[1] = Compare7;
+
+		i = Buf[3];
+		i = i - 1;
+		b[1] = Buf[i];
+		i = i - 1;
+		b[0] = Buf[i];
+
+		if ((a[0] == b[0]) && (a[1] == b[1]))//сравниваем CRC16 преобразованный и полученые результаты
+		{
+			Dostup = 1;  //если все сошлось рарешаем доступ на обработку полученых данных
+		}
+	}
+	return Dostup;
+}
 /* USER CODE END Application */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

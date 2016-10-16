@@ -69,7 +69,8 @@ void MX_USART1_UART_Init(void);
 void MX_USART2_UART_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+void ChipSelectUsart1(GPIO_PinState newState);
+void ChipSelectUsart2(GPIO_PinState newState);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
