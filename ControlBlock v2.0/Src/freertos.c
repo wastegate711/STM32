@@ -154,13 +154,19 @@ void KompObmenThred(void const * argument)
           {
               switch(rxDataUsart2[2])
               {
-                  case TEST:
+                  case TEST:    //тестовый запрос проверки связи
                         ValveAir(GPIO_PIN_SET);
                         CmdTest();
                         ValveAir(GPIO_PIN_RESET);
                       break;
-                  case GET_ID_DEVICE:
+                  case GET_ID_DEVICE: //запрос UID устройства
                         CmdGetUidDevice();
+                      break;
+                  case GET_VERSION_SOFT: //запрос версии ПО
+                      CmdGetVersionSoft();
+                      break;
+                  case TEST_MEHANIZM: //включение исполнительных механизмов
+                      TestMehanizm();
                       break;
               }
               ClearArray(&huart2, rxDataUsart2, 10);

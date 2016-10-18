@@ -479,7 +479,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x57FC831C)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x57FC831C)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x57FC831C)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57FC831C)
-F (../Src/freertos.c)(0x58039507)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS --C99-I "E:\GIT_Repositori\STM32\ControlBlock v2.0\MDK-ARM\RTE"-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx --C99-o "controlblock v2.0\freertos.o" --omf_browse "controlblock v2.0\freertos.crf" --depend "controlblock v2.0\freertos.d")
+F (../Src/freertos.c)(0x5804D188)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS --C99-I "E:\GIT_Repositori\STM32\ControlBlock v2.0\MDK-ARM\RTE"-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx --C99-o "controlblock v2.0\freertos.o" --omf_browse "controlblock v2.0\freertos.crf" --depend "controlblock v2.0\freertos.d")
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A477E2)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF3C42)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF3C42)
@@ -533,9 +533,9 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57FC831C)
 I (../Inc/usart.h)(0x5800ED52)
 I (../Inc/workfunction.h)(0x57FE19BE)
 I (../Inc/crc.h)(0x57FF925F)
-I (../Inc/kompobmen.h)(0x580394B0)
-F (..\Src\KompObmen.c)(0x58039530)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS --C99-I "E:\GIT_Repositori\STM32\ControlBlock v2.0\MDK-ARM\RTE"-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx --C99-o "controlblock v2.0\kompobmen.o" --omf_browse "controlblock v2.0\kompobmen.crf" --depend "controlblock v2.0\kompobmen.d")
-I (../Inc/kompobmen.h)(0x580394B0)
+I (../Inc/kompobmen.h)(0x5804D18A)
+F (..\Src\KompObmen.c)(0x58061199)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS --C99-I "E:\GIT_Repositori\STM32\ControlBlock v2.0\MDK-ARM\RTE"-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx --C99-o "controlblock v2.0\kompobmen.o" --omf_browse "controlblock v2.0\kompobmen.crf" --depend "controlblock v2.0\kompobmen.d")
+I (../Inc/kompobmen.h)(0x5804D18A)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x57FC831C)
 I (../Inc/stm32f4xx_hal_conf.h)(0x57FE367A)
 I (../Inc/main.h)(0x57FE367A)
@@ -574,6 +574,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57FC831C)
 I (../Inc/crc.h)(0x57FF925F)
 I (../Inc/usart.h)(0x5800ED52)
 I (../Inc/flash.h)(0x58034570)
+I (../Inc/workfunction.h)(0x57FE19BE)
 F (..\Src\flash.c)(0x580345CD)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS --C99-I "E:\GIT_Repositori\STM32\ControlBlock v2.0\MDK-ARM\RTE"-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx --C99-o "controlblock v2.0\flash.o" --omf_browse "controlblock v2.0\flash.crf" --depend "controlblock v2.0\flash.d")
 I (../Inc/flash.h)(0x58034570)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x57FC831C)
